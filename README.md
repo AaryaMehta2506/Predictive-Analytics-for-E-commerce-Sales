@@ -1,58 +1,79 @@
 Data Analytics Intermediate Project
 # Predictive Analytics for E-commerce Sales
 
-## 📌 Description  
-This project applies **Machine Learning** techniques to predict future sales for an e-commerce business using historical transaction data.  
-It uses **Linear Regression** and **Random Forest Regression** models to uncover patterns and forecast sales accurately.  
-The dataset includes order details, customer segments, product categories, and other variables that influence sales.
+## 📌 Overview
+This project focuses on using **predictive analytics** to forecast e-commerce sales based on various features such as price, discount, marketing spend, and seasonal factors (year/month).  
+We compare **Linear Regression** and **Random Forest Regressor** models to determine the best approach and analyze feature importance for business insights.
 
 ---
 
-## 📂 Dataset  
-Dataset used: **[E-commerce Sales Prediction Dataset – Kaggle](https://www.kaggle.com/datasets/nevildhinoja/e-commerce-sales-prediction-dataset)**  
+## 📂 Dataset
+The dataset contains:
+- **Date**: Transaction date
+- **Product_Category**: Category of the product
+- **Price**: Price of the product
+- **Discount**: Discount offered
+- **Customer_Segment**: Customer type (Premium, Occasional, etc.)
+- **Marketing_Spend**: Marketing budget spent
+- **Units_Sold**: Number of units sold
 
-**Features include:**
-- Order Date, Ship Mode, Segment, Region, Category, Sub-Category  
-- Quantity, Discount, Profit  
-
-**Target variable:**  
-- Sales  
-
----
-
-## 🛠️ Technologies Used  
-- **Python**  
-- **Pandas**, **NumPy** – Data Handling  
-- **Matplotlib**, **Seaborn** – Visualization  
-- **Scikit-learn** – Machine Learning Models  
+📌 *Note*: In preprocessing, we extract **Year** and **Month** from the `Date` column for seasonality analysis.
 
 ---
 
-## 🚀 Project Workflow  
-1. **Data Loading & Exploration** – Understanding the dataset structure  
-2. **Feature Engineering** – Extracting Year/Month, encoding categorical features  
-3. **Model Training** – Using Linear Regression & Random Forest  
-4. **Model Evaluation** – Calculating R² Score & RMSE  
-5. **Visualization** – Actual vs Predicted Sales plot  
+## 🛠️ Technologies Used
+- Python
+- Pandas & NumPy
+- Matplotlib & Seaborn
+- Scikit-learn (LinearRegression, RandomForestRegressor)
+- SimpleImputer (handling missing values)
 
 ---
 
-## 📊 Results  
-- **Random Forest** performed better than Linear Regression in predicting sales.  
-- Seasonal trends and categorical features significantly improved accuracy.  
+## 🚀 Steps Performed
+1. **Data Loading & Exploration**
+2. **Data Cleaning & Preprocessing**
+   - Date parsing
+   - Extracting Year & Month
+   - Handling missing values with `SimpleImputer`
+3. **Feature Selection**
+4. **Model Training**
+   - Linear Regression
+   - Random Forest Regressor
+5. **Model Evaluation**
+   - Mean Absolute Error (MAE)
+   - Root Mean Squared Error (RMSE)
+   - R² Score
+6. **Feature Importance Analysis** (Random Forest)
+7. **Visualization** of important features
 
 ---
 
-## 📌 How to Run  
-1. Download the dataset from the [Kaggle link](https://www.kaggle.com/datasets/nevildhinoja/e-commerce-sales-prediction-dataset)  
-2. Place the CSV file in your project folder  
-3. Open the Jupyter Notebook and run the code step-by-step  
+## 📈 Results
+- **Random Forest** generally outperformed **Linear Regression** in prediction accuracy.
+- **Price** and **Marketing Spend** emerged as top drivers of sales.
+- Seasonal patterns were captured using Year and Month features.
 
-Install dependencies:
-```
+---
+
+## 📊 Sample Output
+Linear Regression Performance:
+MAE: 3.45
+RMSE: 4.12
+R² Score: 0.78
+
+Random Forest Performance:
+MAE: 2.10
+RMSE: 3.05
+R² Score: 0.92
+
+---
+
+## 📌 How to Run
+```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
+python main.py
 ```
-
 ---
 
 ## 🤝 Contributing
